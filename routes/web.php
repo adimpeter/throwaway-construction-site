@@ -26,3 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/dashboard', 'AdminController@index')->name('admin.dashboard');
 Route::post('/admin/add/gallery', 'AdminController@storeGallery')->name('admin.add.gallery');
 Route::delete('/gallery/{gallery}', 'GalleryController@destroy')->name('admin.delete.gallery');
+
+Route::get('/admin/company/create', 'CompanyController@create')->name('admin.add.company');
+Route::post('/admin/company', 'CompanyController@store')->name('admin.store.company');

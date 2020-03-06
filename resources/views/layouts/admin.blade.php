@@ -34,8 +34,8 @@
             </header>
 
             <div class="menus">
-                <a href="#" class="all-music-nav">All Images</a>
-                <a href="#" class="add-music-nav">Add Image</a>
+                <a href="#">Gallery Manager</a>
+                <a href="{{ route('admin.add.company') }}">Company Settings</a>
                 <a href="#">Add Image Category</a>
                 <a href="#">Site Statistics</a>
                 <a href="#">Dead Link</a>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Gallery;
 use App\GalleryCategory;
+use App\Company;
 
 class HomeController extends Controller
 {
@@ -26,24 +27,28 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $company = Company::all()->first();
         $gallery_categories = GalleryCategory::all();
         $gallery_images = Gallery::all();
         
-        return view('pages.index', compact('gallery_images', 'gallery_categories'));
+        return view('pages.index', compact('gallery_images', 'gallery_categories', 'company'));
     }
 
     public function about(){
-        return view('pages.about');
+        $company = Company::all()->first();
+        return view('pages.about', compact('company'));
     }
 
     public function contact(){
-        return view('pages.contact');
+        $company = Company::all()->first();
+        return view('pages.contact', compact('company'));
     }
 
     public function gallery(){
+        $company = Company::all()->first();
         $gallery_categories = GalleryCategory::all();
         $gallery_images = Gallery::all();
         
-        return view('pages.gallery', compact('gallery_images', 'gallery_categories'));
+        return view('pages.gallery', compact('gallery_images', 'gallery_categories', 'company'));
     }
 }

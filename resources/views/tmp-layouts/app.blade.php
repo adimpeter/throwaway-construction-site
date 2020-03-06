@@ -59,7 +59,7 @@
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="{{ asset('img/logo.png') }}" alt="">
+                                    <img src="{{ (isset($company->logo))? asset('uploads/' . $company->logo) : asset('img/logo.png') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ CHALLENGE, ILORIN
                             <div class="col-12 d-lg-none">
                                 <div class="logo ">
                                     <a href="#">
-                                        <img src="{{ asset('img/logo.png') }}" alt="">
+                                        <img src="{{ (isset($company->logo))? asset('uploads/' . $company->logo) : asset('img/logo.png') }}" alt="">
                                     </a>
                                 </div>
                             </div>
