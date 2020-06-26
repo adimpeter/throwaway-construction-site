@@ -11,7 +11,7 @@
 			<div class="col-md-12">
 				<h2 class="heading">Company Details</h2>
 				@if(isset($company->name))
-				<form method="post" action="" enctype="multipart/form-data">
+				<form method="post" action="{{ route('admin.update.company') }}" enctype="multipart/form-data">
 					@csrf()
 					<div class="form-group">
 						<input type="text" name="company_name" class="form-control" required="required" placeholder="company name" value="{{ $company->name }}">

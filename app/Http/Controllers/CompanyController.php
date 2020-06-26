@@ -50,7 +50,7 @@ class CompanyController extends Controller
           DB::beginTransaction();
 
           // set logo paths
-          $image_path = env('UPLOAD_PATH');
+          $image_path = env('UPLOAD_PATH', 'uploads');
           $image_dir = public_path() . '/' . $image_path;
 
 
@@ -117,7 +117,54 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $request->validate([
+            'company_name' => 'required'
+        ]);
+
+        $image = $request->company_logo;
+
+        try {
+
+          DB::beginTransaction();
+
+          // set logo paths
+          $image_path = env('UPLOAD_PATH', 'uploads');
+          $image_dir = public_path() . '/' . $image_path;
+
+
+          // make the directory
+          if (!file_exists($image_dir)) {
+              File::makeDirectory($image_dir, 0755, true);
+          }
+
+          // set logo name and save logo to directory
+          $image_name = Str::slug(strtolower(env('COMPANY_NAME'))) . '-logo' . '.'.$image->getClientOriginalExtension();
+          $image->move($image_dir, $image_name);
+
+          // save company details to database
+          $company_details = [
+            'name' => $request->company_name,
+            'phone' => $request->company_phone,
+            'email' => $request->company_email,
+            'address' => $request->company_address,
+            'logo' => $image_name,
+          ];
+
+          $company =  DB::table('companies')->update(
+            ['name' => $request->company_name],
+            $company_details
+          );
+
+          DB::commit();
+
+          return redirect()->back()->with('success', 'Company Details Added');
+
+        } catch (\Exception $e) {
+          DB::rollback();
+
+          \Log::error($e->getMessage());
+          return redirect()->back()->with('error', 'Something went wrong');
+        }
     }
 
     /**

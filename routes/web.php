@@ -29,3 +29,6 @@ Route::delete('/gallery/{gallery}', 'GalleryController@destroy')->name('admin.de
 
 Route::get('/admin/company/create', 'CompanyController@create')->name('admin.add.company');
 Route::post('/admin/company', 'CompanyController@store')->name('admin.store.company');
+Route::post('/admin/company/update', 'CompanyController@update')->name('admin.update.company');
+
+Route::post('/admin/company/mail/contact', 'CompanyMailController@contact')->name('send.contact.mail');
