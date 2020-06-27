@@ -41,12 +41,12 @@
                     <div class="row align-items-center">
                         <div class="col-xl-5 col-md-5 ">
                             <div class="header_left">
-                                <p>Opening Hour: (10.00-07.00)</p>
+                                <!-- <p>Opening Hour: (10.00-07.00)</p> -->
                             </div>
                         </div>
                         <div class="col-xl-7 col-md-7">
                             <div class="header_right d-flex justify-content-end">
-                                <a href="#" class="boxed-btn3">Get a Quote</a>
+                                <a href="{{ route('contact') }}" class="boxed-btn3">Get a Quote</a>
                             </div>
 
                         </div>
@@ -58,7 +58,7 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ route('homepage') }}">
                                     <img src="{{ (isset($company->logo))? asset('uploads/' . $company->logo) : asset('img/logo.png') }}" alt="">
                                 </a>
                             </div>
@@ -71,10 +71,9 @@
                                     </div>
                                     <div class="address_info">
                                         <h3>Address</h3>
-                                        <p>RAILWAY SHOPPING COMPLEX 
-OPP. SKYE BANK PLC 
-CHALLENGE, ILORIN 
-</p>
+                                        <p>
+                                            {{ $company->address ?? '' }}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="single_address d-flex">
@@ -83,8 +82,7 @@ CHALLENGE, ILORIN
                                     </div>
                                     <div class="address_info">
                                         <h3>Call Us</h3>
-                                        <p>08034261324, 08095592957 
-</p>
+                                        <p>{{ $company->phone ?? '' }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +96,7 @@ CHALLENGE, ILORIN
                         <div class="row align-items-center">
                             <div class="col-12 d-lg-none">
                                 <div class="logo ">
-                                    <a href="#">
+                                    <a href="{{ route('homepage') }}">
                                         <img src="{{ (isset($company->logo))? asset('uploads/' . $company->logo) : asset('img/logo.png') }}" alt="">
                                     </a>
                                 </div>
@@ -108,7 +106,15 @@ CHALLENGE, ILORIN
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="{{ route('homepage') }}">home</a></li>
-                                            <li><a href="{{ route('about') }}">About Us</a></li>
+                                            <li><a href="{{ route('about') }}">About Us</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{{ route('about') }}#management-system">Modern Service Management System</a></li>
+                                                    <li><a href="{{ route('about') }}#equipment">Equipment/Technology</a></li>
+                                                    <li><a href="{{ route('about') }}#computer-hardware">Computer Hardwares</a></li>
+                                                    <li><a href="{{ route('about') }}#software-available">Software Available</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{{ route('about') }}#staff-list"> Our Staff</a></li>
                                             <li><a href="{{ route('gallery') }}">Projects Gallery</a></li>
                                            <!--  <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -128,7 +134,7 @@ CHALLENGE, ILORIN
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                            <!-- <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                                 <div class="Appointment d-flex justify-content-end">
                                     <div class="search_icon">
                                         <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
@@ -140,7 +146,7 @@ CHALLENGE, ILORIN
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -181,13 +187,11 @@ CHALLENGE, ILORIN
                 <div class="row">
                     <div class="col-xl-3 col-md-6 col-lg-3 ">
                         <div class="footer_widget">
-                                <h3 class="footer_title">
-                                        About
-                                </h3>
-                            <p>RAILWAY SHOPPING COMPLEX OPP. <br>SKYE BANK PLC CHALLENGE, ILORIN<br>
-                                <a href="#">08034261324</a> <br>
-                                <a href="#">08095592957</a> <br>
-                                <a href="#">contact@taurus.com</a>
+                            <h3 class="footer_title">
+                                    About
+                            </h3>
+                            <p> 
+                                {{ $company->address ?? '' }}
                             </p>
 
                             <div class="socail_links">
@@ -207,16 +211,7 @@ CHALLENGE, ILORIN
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-pinterest"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-youtube-play"></i>
-                                        </a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
 
@@ -245,6 +240,19 @@ CHALLENGE, ILORIN
                                 <li><a href="{{ route('gallery') }}">Project Gallery</a></li>
                                 <li><a href="{{ route('contact') }}"> Contact</a></li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-md-6 col-lg-2 offset-xl-1 offset-lg-1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contact Us
+                            </h3>
+                            <p>
+                                <b>Phone Numbers: </b>{{ $company->phone ?? '' }}<br>
+                                <b>Email: </b><a href="{{ route('contact') }}"> {{ $company->email ?? '' }}</a>
+                            </p>
+                            
                         </div>
                     </div>
                     <!-- <div class="col-xl-4 col-md-6 col-lg-4">

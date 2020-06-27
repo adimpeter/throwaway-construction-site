@@ -51,7 +51,7 @@
                                 themselves clearly in their various fields and encounters. 
                             </p>
 
-                            <a href="contact.html" class="boxed-btn3">Contact Us</a>
+                            <a href="{{ route('contact') }}" class="boxed-btn3">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -110,6 +110,7 @@
         </div>
     </div>
 
+    <a id="management-system"></a>
     <div class="about_area">
         <div class="container">
             <div class="border_1px">
@@ -144,6 +145,7 @@
     </div>
 
 
+    <a id="equipment"></a>
     <div class="about_area dark-section">
         <div class="container">
             <div class="border_1px">
@@ -190,6 +192,7 @@
     </div>
 
 
+    <a id="computer-hardware"></a>
      <div class="about_area">
         <div class="container">
             <div class="border_1px">
@@ -199,21 +202,30 @@
                             <h3>COMPUTER HARDWARES</h3>
                             
                             <p>
-                                The following HARDWARE are available in our office: <br />
+                                The following HARDWARE are available in our office:
                             </p>
-
                             <p>
-                                Pentium 4 computer systems with duo core intel mmx processors laptop computer system hp DeskJet printers (A3 size) Colour laser printers 
+                            <ul>
+                                <li>Pentium 4 computer systems with duo core intel mmx processors laptop computer system hp DeskJet printers (A3 size) Colour laser printers </li>
+                                <li>Garmin GPS (4 nos GPSmap 76 and 1 etrex GPS) Digital cameras</li>
+                            </ul>
                             </p>
 
-                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                            <p>
-                                Garmin GPS (4 nos GPSmap 76 and 1 etrex GPS) Digital cameras
-                            </p>
+        </div>
+    </div>
 
-                            <br />
-
+    <a id="software-available"></a>
+    <div class="about_area dark-section">
+        <div class="container">
+            <div class="border_1px">
+                <div class="row align-items-center">
+                    <div class="col-xl-12 col-md-12">
+                        <div class="about_info">
                             <h3>SOFTWARE AVAILABLE</h3>
 
                             <p>
@@ -236,35 +248,49 @@
         </div>
     </div>
 
-    <!-- <div class="about_area">
+    <a id="staff-list"></a>
+    <div class="about_area">
         <div class="container">
             <div class="border_1px">
                 <div class="row align-items-center">
-                    <div class="col-xl-6  col-md-6">
-                        <div class="about_thumb">
-                            <img src="img/about/about2.png" alt="">
-                            <div class="pattern_img d-none d-lg-block">
-                                <img src="img/pattern/pattern.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6">
+                    <div class="col-xl-12 col-md-12">
                         <div class="about_info">
-                            <h3>We Serve all of your <br>
-                                Construction Services</h3>
-                            <p class="first_para"> “Construction is a full service construction company offering
-                                building solutions from start to finish. Our staff has been operating on NYC for ten
-                                years.</p>
-                            <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                                suffered alteration in some form, by injected humour, or randomised words which don't
-                                look even slightly believable.</p>
-                            <a href="contact.html" class="boxed-btn3">Contact Us</a>
+                            <h3>LIST OF PROFESSIONAL STAFF</h3>
+                            <div>
+                                <ul>
+                                   <li>Engr. Adeyemi M. Ademola B.Eng.(Water Resources and Environmental Engineering) MNSE </li> 
+
+                                   <li>Engr. Ojediran Tayo B.Eng Civil, MNSE  </li> 
+
+                                   <li>Engr. Olabisi A. Fadahunsi B.Eng Civil  </li> 
+
+                                   <li>Engr. Ayokunle Olugbenga E. B.Eng Civil, MNSE</li> 
+
+                                   <li>Iyilade John Oludare B.Eng Civil, MNSE  </li> 
+
+                                   <li>Engr. Hakeem Saka Ajibola B.Eng.(Mechanical Engineering)  </li> 
+
+                                   <li>Azeez Amidu Akintola Quantity Surveyor  </li> 
+
+                                   <li>Bolaji Yemi Peter B.Eng Civil  </li> 
+
+                                   <li>Taofeeq A. Saka Civil Eng. Technologist  </li> 
+
+                                   <li>Dolapa Adeyemi B.tech Accounting  </li>  
+
+                                   <li>Aremu A. Mufutau HND Architectural  </li>  
+
+                                   <li>Bisola Ibiwoye HND Civil Engineering  </li>  
+                                    
+                                   <li>Engr. O. Oshanisi B.Eng Civil FNSE, FNICE, FNISET  </li>  
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div> -->
+    </div>
 
 @endsection

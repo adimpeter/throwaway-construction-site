@@ -19,7 +19,7 @@
 </p>
                             <p>TAURUS ENGINEERING CONSULT is a fast growing firm with numerous bright objective/ideas and drives with a strong desire and intent to contribute dynamically and positively to the acute development and need of human race’s comfortability was established to tackle the immediate and future challenge that may present itself. 
 </p>
-                            <a href="about.html" class="boxed-btn3">About Us</a>
+                            <a href="{{ route('about') }}" class="boxed-btn3">About Us</a>
                         </div>
                     </div>
                 </div>

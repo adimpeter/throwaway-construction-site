@@ -374,7 +374,7 @@
                 </div>
                 <div class="col-lg-4 col-md-5">
                     <div class="contact_btn">
-                        <a class="boxed-btn3" href="contact.html">Contact Us</a>
+                        <a class="boxed-btn3" href="{{ route('contact') }}">Contact Us</a>
                     </div>
                 </div>
             </div>

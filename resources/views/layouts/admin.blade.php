@@ -30,15 +30,25 @@
     <div id="app" class="site-wrapper">
         <div class="side-bar">
             <header>
-                Ambiantic
+                Dashboard
             </header>
 
             <div class="menus">
+                <a href="{{ route('admin.dashboard') }}">Home</a>
                 <a href="#">Gallery Manager</a>
                 <a href="{{ route('admin.add.company') }}">Company Settings</a>
-                <a href="#">Add Image Category</a>
+                <!-- <a href="#">Add Image Category</a>
                 <a href="#">Site Statistics</a>
-                <a href="#">Dead Link</a>
+                <a href="#">Dead Link</a> -->
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
 

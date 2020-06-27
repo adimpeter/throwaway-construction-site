@@ -17,6 +17,8 @@
         </div>
         <!--/ bradcam_area  -->
 
+    <!-- include error and success view -->
+    @include('snipps.pass-or-fail')
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
             <div class="container">
